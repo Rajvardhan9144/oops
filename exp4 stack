@@ -1,0 +1,93 @@
+#include <iostream>
+
+using namespace std;
+
+class stack {
+    int *a, top, size;
+
+public:
+
+    stack(int n) {
+        cout << "Constructor is called!" << endl;
+        size = n;
+        a = new int[size];
+        top = -1;
+    }
+
+    void push() {
+        if (top == (size - 1)) {
+            cout << "Stack Overflow!" << endl;
+        }
+        else {
+            cout << "Enter the number: ";
+            top++;
+            cin >> a[top];
+            cout << endl;
+        }
+    }
+
+    void pop() {
+        if (top == -1) {
+            cout << "Stack is empty!" << endl;
+        }
+        else {
+            cout << "Popped " << a[top] << endl;
+            top--;
+        }
+    }
+
+    void display() {
+        if (top == -1) {
+            cout << "Stack is empty!" << endl;
+        }
+        else {
+            cout << "Stack contents (top to bottom):" << endl;
+            for (int i = top; i >= 0; i--) {
+                cout << "|" << a[i] << "|" << endl;
+            }
+        }
+    }
+
+    ~stack() {
+        cout << "Destructor is called!" << endl;
+        delete[] a;
+    }
+};
+
+int main() {
+    int n, choice;
+
+    cout << "Enter the size of the stack: ";
+    cin >> n;
+    stack a(n);
+
+    do {
+        cout << "\nStack Operations!" << endl;
+        cout << "1. Push" << endl;
+        cout << "2. Pop" << endl;
+        cout << "3. Display" << endl;
+        cout << "4. Exit" << endl;
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        cout << endl;
+        switch (choice) {
+            case 1:
+                a.push();
+                break;
+            case 2:
+                a.pop();
+                break;
+            case 3:
+                a.display();
+                break;
+            case 4:
+                cout << "Exit!" << endl;
+                return 0;
+            default:
+                cout << "Enter a valid choice!" << endl;
+        }
+    } while (1);
+
+    return 0;
+}
