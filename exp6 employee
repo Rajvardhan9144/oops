@@ -1,0 +1,80 @@
+#include <iostream>
+using namespace std;
+
+class base1 {
+    string name;
+    int emp_id;
+
+public:
+    // Function to read basic details
+    void read() {
+        cout << "Enter the name: ";
+        cin>>name;
+        
+        cout << "Enter the Employee ID: ";
+        cin >> emp_id;
+        
+    }
+
+    // Function to display basic details
+    void display() {
+        cout << "The name of the employee is: " << name << endl;
+        cout << "The Employee ID is: " << emp_id << endl;
+    }
+};
+
+class base2 {
+    int salary;
+    string dept;
+
+public:
+    // Function to read department details
+    void read1() {
+        cout << "Enter the Salary: ";
+        cin >> salary;
+       
+        cout << "Enter the Department: ";
+        cin>>dept;
+        
+    }
+
+    // Function to display department details
+    void display1() {
+        cout << "The salary of the employee is: " << salary << endl;
+        cout << "The department of the employee is: " << dept << endl;
+    }
+};
+
+class der : public base1, public base2 {
+    string desg;
+
+public:
+    // Function to read designation
+    void read2() {
+        cout << "Enter the Designation: ";
+        cin>>desg;
+       
+    }
+
+    // Function to display designation
+    void display2() {
+        cout << "The designation of the employee is: " << desg << endl;
+    }
+};
+
+int main() {
+    der emp1;
+
+    cout << "Please enter all the details of Employee!" << endl;
+    emp1.read();   
+    emp1.read1();  
+    emp1.read2();  
+
+    cout << endl;
+    cout << "Displaying all the details of Employee!" << endl;
+    emp1.display();   
+    emp1.display1();  
+    emp1.display2();  
+
+    return 0;
+}
