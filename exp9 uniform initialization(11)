@@ -1,0 +1,53 @@
+PART1
+
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+int *p=new int[5]{1,2,3,4,5};
+for(int i=0;i<5;i++){
+    cout<<*(p+i)<<"  "<<endl;
+}
+return 0;
+}
+
+
+PART2
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+class point{
+public:
+    int x,y;
+    point(int x1, int y1){
+        x=x1;
+        y=y1;
+    }
+    void display(){
+        cout << "x=" << x<< endl;
+        cout << "y=" << y<< endl;
+    }
+};
+
+int main(){
+    int a{5};
+    double b{3.14};
+    int arr[3] = {1,2,3};
+    point p{10,20};
+    vector <int> vec{1,2,3,4,5};
+    cout << "a=" << a << endl;
+    cout << "b=" << b << endl;
+    cout << "Array elements: ";
+    for (int i=0; i<3; i++){
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+    p.display();
+    cout << "Vector elements: ";
+    for (auto& elem:vec){
+        cout << elem << " ";
+    }
+    cout << endl;
+    return 0;
+}
