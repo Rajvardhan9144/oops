@@ -1,0 +1,78 @@
+#include<iostream>
+using namespace std;
+class complex1{
+int real,img;
+public:
+    void read(){
+    cout<<"Enter the real and img: "<<endl;
+    cin>>real>>img;
+    }
+    void display(){
+    if(img>=0){
+        cout<<real<<"+"<<img<<"i"<<endl;
+    }
+    else{
+        cout<<real<<img<<"i"<<endl;
+    }
+    }
+    complex1 add(complex1 c1,complex1 c2){
+    complex1 sum;
+    sum.real=c1.real+c2.real;
+    sum.img=c1.img+c2.img;
+    sum.display();
+    return sum;
+    }
+    complex1 sub(complex1 c1,complex1 c2){
+    complex1 sub;
+    sub.real=c1.real-c2.real;
+    sub.img=c1.img-c2.img;
+    sub.display();
+    return sub;
+    }
+    complex1 mul(complex1 c1,complex1 c2){
+    complex1 mul;
+    mul.real=(c1.real*c2.real)-(c1.img*c2.img);
+    mul.img=(c1.real*c2.img)+(c1.img*c2.real);
+    mul.display();
+    return mul;
+    }
+    complex1 div(complex1 c1,complex1 c2){
+    complex1 div;
+    float d;
+    d=(c2.real*c2.real)+(c2.img*c2.img);
+    div.real=((c1.real*c2.real)+(c1.img*c2.img))/d;
+    div.img=((c1.img*c2.real)-(c1.real*c2.img))/d;
+    div.display();
+    return div;
+    }
+    void conj(){
+    complex1 temp;
+    temp.real=real;
+    temp.img=real;
+    temp.img=-img;
+    temp.display();
+    }
+};
+int main(){
+complex1 c1,c2,c3;
+c1.read();
+c2.read();
+cout<<"First complex number is :  "<<endl;
+c1.display();
+cout<<"Second complex number is : "<<endl;
+c2.display();
+cout<<"Addition is:  "<<endl;
+c3.add(c1,c2);
+cout<<"Substraction is :  "<<endl;
+c3.sub(c1,c2);
+cout<<"Multiplication is:  "<<endl;
+c3.mul(c1,c2);
+cout<<"Division is:  "<<endl;
+c3.div(c1,c2);
+cout<<"Conjugate of 2 complex number: "<<endl;
+c1.conj();
+c2.conj();
+return 0;
+}
+
+
