@@ -1,0 +1,56 @@
+//PART 1
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    auto xyz =[](){
+        cout<<"Hello World"<<endl;
+    };
+    xyz();
+    auto abc=[](int a,int b){
+        cout<<"Sum is "<<a+b<<endl;
+    };
+    abc(7,22);
+    auto lmn=[](int a, int b, string op){
+        if (op=="Sum"){
+            return a+b;
+        }
+        else{
+            return(a+b)/2;
+        }
+    };
+    auto a = lmn(7,22,"Sum");
+    cout<<a<<endl;
+    auto pqr = [](auto a, auto b){
+        return(a+b);
+    };
+    cout<<pqr(10,20)<<endl;
+    cout<<pqr(10.2,20.2)<<endl;
+    cout<<pqr(string("PCCOE"),string("SPPU"))<<endl;
+    return 0;
+}
+
+
+
+PART2(14)
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    auto xyz = [](auto a, auto b){  
+        int total = a + b;
+        if (total >= 80) {
+            return "A Grade";
+        } else {
+            return "Below A Grade";
+        }
+    };
+
+    auto scores = xyz(40, 70);  // Calling the lambda function
+    cout << scores << endl;      // Printing the result
+
+    return 0;
+}
+
