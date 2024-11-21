@@ -1,0 +1,28 @@
+#include <iostream>
+#include <algorithm>
+#include <string>
+#include <vector>
+using namespace std;
+
+void printele(auto &c){
+    for (auto e:c)
+        cout << e<<" "<<endl;
+}
+int vi;
+double vd;
+string vs;
+int main(){
+    auto greater = [](auto a, auto b) -> bool{
+        return a>b;
+    };
+    vector <int> vi = {3,5,22,7};
+    vector <double> vd = {4.62,4.79,6.69,1.24};
+    vector <string> vs = {"xyz","abc","pqr","PCCOE"};
+    sort(vi.begin(),vi.end(),greater);
+    sort(vd.begin(),vd.end(),greater);
+    sort(vs.begin(),vs.end(),greater);
+    printele(vi);
+    printele(vd);
+    printele(vs);
+    return 0;
+}
