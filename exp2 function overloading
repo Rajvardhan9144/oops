@@ -1,0 +1,58 @@
+#include <iostream>
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
+}
+
+int add(int a, int b, int c) {
+    return a + b + c;
+}
+
+int main() {
+    int choice;
+
+    cout << "Choose the operation:\n";
+    cout << "1. Add two integers\n";
+    cout << "2. Add two doubles\n";
+    cout << "3. Add three integers\n";
+    cout << "Enter your choice (1, 2, or 3): ";
+    cin >> choice;
+
+    if (choice == 1) {
+        int a, b;
+
+        cout << "Enter two integers: ";
+        cin >> a >> b;
+
+        int result = add(a, b);
+        cout << "Sum of two integers: " << result << endl;
+    }
+    else if (choice == 2) {
+        double a, b;
+
+        cout << "Enter two decimal numbers: ";
+        cin >> a >> b;
+
+        double result = add(a, b);
+        cout << "Sum of two doubles: " << result << endl;
+    }
+    else if (choice == 3) {
+        int a, b, c;
+
+        cout << "Enter three integers: ";
+        cin >> a >> b >> c;
+
+        int result = add(a, b, c);
+        cout << "Sum of three integers: " << result << endl;
+    }
+    else {
+        cout << "Invalid choice!\n";
+    }
+
+    return 0;
+}
