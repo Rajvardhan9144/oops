@@ -1,0 +1,61 @@
+#include <iostream>
+
+using namespace std;
+class base1{
+    string name;
+    int stu_id;
+public:
+    void read(){
+        cout<<"Enter name of student: "<<endl;
+        cin>>name;
+        cout<<"Enter student id: "<<endl;
+        cin>>stu_id;
+    }
+    void display(){
+        cout<<"Name of student is: "<<name<<endl;
+        cout<<"student id is: "<<stu_id<<endl;
+    }
+};
+class base2{
+    string clg_name;
+    int roll_no;
+public:
+    void read1(){
+        cout<<"Name of the college: "<<endl;
+        cin>>clg_name;
+        cout<<"Roll no is: "<<endl;
+        cin>>roll_no;
+    }
+    void display1(){
+        cout<<"Name of the college is: "<<clg_name<<endl;
+        cout<<"Roll no is: "<<roll_no<<endl;
+    }
+
+};
+class der:public base1,public base2{
+    string dept;
+public:
+    void read2(){
+        cout<<"Name of the department: "<<endl;
+        cin>>dept;
+    }
+    void display2(){
+        cout<<"Department is: "<<dept<<endl;
+    }
+};
+
+
+int main(){
+    der stu1;
+    cout<<"Enter details of student: "<<endl;
+    stu1.read();
+    stu1.read1();
+    stu1.read2();
+    cout<<"Details of student: "<<endl;
+    stu1.display();
+    stu1.display1();
+    stu1.display2();
+    return 0;
+}
+
+
